@@ -37,4 +37,5 @@ describe json(content: http('http://localhost:3000/api/admin/settings',
               method: 'GET',
               headers: { 'Content-Type' => 'application/json' }).body) do
   its(['external_image_storage.s3', 'bucket']) { should eq 'grafana-image-store' }
+  its(['session', 'provider']) { should eq 'memory' }
 end
